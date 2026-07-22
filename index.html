@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I SUPPORT Hon. ATIKU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>I SUPPORT Hon. ATIKU</h1>
+  <p>Together for a Better Future</p>
+
+  <h3>Total Supporters: <span id="supporterCount">0</span></h3>
+</header>
+
+<main>
+
+  <img src="poster.jpg" alt="Hon. ATIKU Poster" class="poster">
+
+  <section class="support-form">
+
+    <h2>Become a Supporter</h2>
+
+    <form id="supportForm">
+
+      <input type="text" id="name" placeholder="Full Name" required>
+
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+
+      <input type="text" id="state" value="Nasarawa State" readonly>
+
+      <input type="text" id="lga" value="Keffi" readonly>
+
+      <select id="ward" required>
+        <option value="">Select Ward</option>
+        <option value="Tudun Kofa Ward">Tudun Kofa Ward</option>
+        <option value="Gangaren Tudu Ward">Gangaren Tudu Ward</option>
+        <option value="Yara Ward">Yara Ward</option>
+        <option value="Iya 1 Ward">Iya 1 Ward</option>
+        <option value="Iya 2 Ward">Iya 2 Ward</option>
+      </select>
+
+      <input type="text" id="pollingUnit" placeholder="Polling Unit" required>
+
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+
+      <input type="text" id="occupation" placeholder="Occupation">
+
+      <button type="submit">Join the Movement</button>
+
+    </form>
+
+    <br>
+
+    <button id="shareBtn">Share on WhatsApp</button>
+
+  </section>
+
+</main>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

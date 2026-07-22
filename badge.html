@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supporter Badge</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+</head>
+<body>
+
+<header>
+<h1>I SUPPORT Hon. ATIKU</h1>
+<p>Your Supporter Badge</p>
+</header>
+
+<main>
+
+<div id="badge">
+
+<div style="position:relative;">
+
+<img src="hon.jpg" id="candidate" alt="Hon. Yakubu Atiku">
+
+</div>
+
+<img id="supporter" src="" alt="Supporter Photo">
+
+<div class="info">
+
+<h1>I SUPPORT Hon. ATIKU</h1>
+
+<h3 id="fullname"></h3>
+
+<p><strong>Ward:</strong> <span id="ward"></span></p>
+
+<p><strong>Polling Unit:</strong> <span id="polling"></span></p>
+
+<p><strong>Keffi West 2027</strong></p>
+
+</div>
+
+</div>
+
+<button class="downloadBtn" onclick="downloadBadge()">
+📥 Download My Badge
+</button>
+
+<main>
+
+<h2 style="text-align:center;color:green;">
+Badge Page is Loading
+</h2>
+
+<div id="badge">
+
+<script>
+
+const saved = localStorage.getItem("supporter");
+
+if (saved) {
+    const supporter = JSON.parse(saved);
+
+    document.getElementById("fullname").textContent = supporter.name || "";
+    document.getElementById("ward").textContent = supporter.ward || "";
+    document.getElementById("polling").textContent = supporter.pollingUnit || "";
+
+    if (supporter.photo) {
+        document.getElementById("supporter").src = supporter.photo;
+    }
+} else {
+    document.getElementById("fullname").textContent = "No supporter data found";
+}
+
+function downloadBadge(){
+
+html2canvas(document.getElementById("badge")).then(canvas=>{
+
+const link=document.createElement("a");
+
+link.download="Atiku2027-Supporter-Badge.png";
+
+link.href=canvas.toDataURL("image/png");
+
+link.click();
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
